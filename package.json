@@ -2,6 +2,9 @@
   "name": "ecma-version-validator-webpack-plugin",
   "version": "1.0.0",
   "description": "A wepback plugin to verify ECMAScript version for bundle files",
+  "engines": {
+    "node": ">=10"
+  },
   "main": "lib/index.js",
   "files": [
     "lib"
@@ -21,9 +24,15 @@
     "ecma"
   ],
   "author": "koba04",
+  "repository": {
+    "type" : "git",
+    "url": "https://github.com/koba04/ecma-version-validator-webpack-plugin.git"
+  },
+  "homepage": "https://github.com/koba04/ecma-version-validator-webpack-plugin",
+  "bugs": "https://github.com/koba04/ecma-version-validator-webpack-plugin/issues",
   "license": "MIT",
   "peerDependencies": {
-    "webpack": "^4.43.0"
+    "webpack": "^4.40.0"
   },
   "devDependencies": {
     "@cybozu/eslint-config": "^10.0.3",
