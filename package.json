@@ -11,7 +11,7 @@
     "build": "tsc",
     "clean": "rimraf lib",
     "lint": "eslint 'src/**/*.ts'",
-    "reelase": "standard-version",
+    "release": "standard-version",
     "prerelease": "npm run lint && npm test && npm run build",
     "start": "tsc -w",
     "test": "jest"
