@@ -1,0 +1,47 @@
+{
+  "name": "ecma-version-validator-webpack-plugin",
+  "version": "1.0.0",
+  "description": "A wepback plugin to verify ECMAScript version for bundle files",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "tsc",
+    "clean": "rimraf lib",
+    "lint": "eslint 'src/**/*.ts'",
+    "reelase": "standard-version",
+    "prerelease": "npm run lint && npm test && npm run build",
+    "start": "tsc -w",
+    "test": "jest"
+  },
+  "keywords": [
+    "webpack",
+    "ecma"
+  ],
+  "author": "koba04",
+  "license": "MIT",
+  "peerDependencies": {
+    "webpack": "^4.43.0"
+  },
+  "devDependencies": {
+    "@cybozu/eslint-config": "^10.0.3",
+    "@types/glob": "^7.1.1",
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.13.5",
+    "@types/webpack": "^4.41.12",
+    "eslint": "^6.8.0",
+    "jest": "^26.0.1",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "standard-version": "^7.1.0",
+    "ts-jest": "^25.5.0",
+    "typescript": "^3.8.3",
+    "webpack": "^4.43.0"
+  },
+  "dependencies": {
+    "acorn": "^7.1.1",
+    "glob": "^7.1.6"
+  }
+}

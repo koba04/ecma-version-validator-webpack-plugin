@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`validate failed should throw an error includes all files having any error 1`] = `
+"[foo.js]:SyntaxError: Unexpected token (2:11)
+[2:11] var foo = () => console.log(123);
+[bar.js]:SyntaxError: The keyword 'class' is reserved (2:0)
+[2:0] class Bar {}
+"
+`;
