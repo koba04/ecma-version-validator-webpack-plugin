@@ -1,4 +1,7 @@
 # ecma-version-validator-webpack-plugin
+[![npm version](https://badge.fury.io/js/%40koba04%2Fecma-version-validator-webpack-plugin.svg)](https://badge.fury.io/js/%40koba04%2Fecma-version-validator-webpack-plugin)
+[![](https://github.com/koba04/ecma-version-validator-webpack-plugin/workflows/test/badge.svg)](https://github.com/koba04/ecma-version-validator-webpack-plugin/actions?workflow=test)
+[![](https://github.com/koba04/ecma-version-validator-webpack-plugin/workflows/lint/badge.svg)](https://github.com/koba04/ecma-version-validator-webpack-plugin/actions?workflow=lint)
 
 A wepback plugin to verify ECMAScript version for bundle files.
 
