@@ -36,6 +36,8 @@ module.exports = {
 
 - `options.ecmaVersion`
     - This is a target ECMAScript version you expect. See the avaiable versions in the [Acorn's documentation](https://github.com/acornjs/acorn/tree/master/acorn#interface). The default version is `5`(ES5).
+- `options.test`
+    - A `RegExp` pattern to apply this plugin. The default value is `/\.(m)?js$/`.
 
 ## LICENCE
 
