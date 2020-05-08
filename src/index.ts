@@ -13,10 +13,14 @@ export class ECMAVersionValidatorPlugin implements Plugin {
   }
   apply(compiler: Compiler) {
     compiler.hooks.emit.tap(this.name, (compilation) => {
-      validate(compilation.assets, {
-        ecmaVersion: this.ecmaVersion,
-        test: this.test,
-      });
+      try {
+        validate(compilation.assets, {
+          ecmaVersion: this.ecmaVersion,
+          test: this.test,
+        });
+      } catch (e) {
+        compilation.errors.push(e);
+      }
     });
   }
 }
