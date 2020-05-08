@@ -39,6 +39,7 @@
     "@types/jest": "^25.2.1",
     "@types/node": "^13.13.5",
     "@types/webpack": "^4.41.12",
+    "@types/webpack-sources": "^0.1.7",
     "eslint": "^6.8.0",
     "jest": "^26.0.1",
     "prettier": "^2.0.5",
@@ -49,6 +50,7 @@
     "webpack": "^4.43.0"
   },
   "dependencies": {
-    "acorn": "^7.1.1"
+    "acorn": "^7.1.1",
+    "webpack-sources": "^1.4.3"
   }
 }
