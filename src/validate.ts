@@ -1,3 +1,4 @@
+import { Source } from "webpack-sources";
 import { parse, defaultOptions } from "acorn";
 import { format } from "./format";
 
@@ -16,19 +17,21 @@ export type ErrorMap = Map<
 >;
 
 export const validate = (
-  assets: { [file: string]: { _value: string } },
+  assets: { [file: string]: Source },
   options: { ecmaVersion: ECMAVersion }
 ) => {
   const { ecmaVersion } = options;
   const errors: ErrorMap = new Map();
   Object.entries(assets).forEach(([file, source]) => {
+    const sourceCode = source.source();
     try {
-      parse(source._value, { ecmaVersion });
+      parse(sourceCode, { ecmaVersion });
     } catch (e) {
-      const message = e.toString();
-      const match = message.match(/.*?\((\d+):(\d+)\)$/);
-      const position = match ? { line: +match[1], column: +match[2] } : null;
-      errors.set(file, { message, source: source._value, position });
+      errors.set(file, {
+        message: e.message,
+        source: sourceCode,
+        position: e.loc,
+      });
     }
   });
   if (errors.size > 0) {
