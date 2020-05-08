@@ -1,6 +1,6 @@
 {
   "name": "ecma-version-validator-webpack-plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A wepback plugin to verify ECMAScript version for bundle files",
   "engines": {
     "node": ">=10"
