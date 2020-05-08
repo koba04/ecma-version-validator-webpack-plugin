@@ -10,7 +10,7 @@ describe("validate", () => {
             "foo.js": new RawSource("console.log(123);"),
             "bar.js": new RawSource("var bar = 123"),
           },
-          { ecmaVersion: 5 }
+          { ecmaVersion: 5, test: /\.js/ }
         );
       }).not.toThrow();
     });
@@ -21,7 +21,7 @@ describe("validate", () => {
             "foo.js": new RawSource("const foo = () => console.log(123);"),
             "bar.js": new RawSource("class Bar {}"),
           },
-          { ecmaVersion: 2015 }
+          { ecmaVersion: 2015, test: /\.js/ }
         );
       }).not.toThrow();
     });
@@ -33,7 +33,18 @@ describe("validate", () => {
               new RawSource("function foo() { console.log(123); }")
             ),
           },
-          { ecmaVersion: 5 }
+          { ecmaVersion: 5, test: /\.js/ }
+        );
+      }).not.toThrow();
+    });
+    it("should ignore non JS files", () => {
+      expect(() => {
+        validate(
+          {
+            "foo.js": new RawSource("function foo() { console.log(123); }"),
+            "bar.css": new RawSource(".bar { font-size: 1rem; }"),
+          },
+          { ecmaVersion: 5, test: /\.js/ }
         );
       }).not.toThrow();
     });
@@ -49,7 +60,7 @@ describe("validate", () => {
             "bar.js": new RawSource("var bar = 1;\nclass Bar {}"),
             "baz.js": new RawSource("var baz = true"),
           },
-          { ecmaVersion: 5 }
+          { ecmaVersion: 5, test: /\.js/ }
         );
       }).toThrowErrorMatchingSnapshot();
     });
@@ -61,7 +72,7 @@ describe("validate", () => {
               new RawSource("var foo = 1;\nvar foo = () => console.log(123);")
             ),
           },
-          { ecmaVersion: 5 }
+          { ecmaVersion: 5, test: /\.js/ }
         );
       }).toThrowErrorMatchingSnapshot();
     });
