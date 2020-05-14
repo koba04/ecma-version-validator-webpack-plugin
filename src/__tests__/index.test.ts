@@ -1,6 +1,10 @@
 import path from "path";
 import webpack from "webpack";
-import MemoryFileSystem from "memory-fs";
+import { fs } from "memfs";
+
+// This will be able to remove at webpack v5
+// @ts-ignore https://github.com/webpack/webpack/pull/9251
+fs.join = path.join;
 
 import { ECMAVersionValidatorPlugin } from "../";
 
@@ -38,7 +42,8 @@ describe("ECMAVersionValidatorPlugin", () => {
         devtool: "nosources-source-map",
         plugins: [new ECMAVersionValidatorPlugin()],
       });
-      compiler.outputFileSystem = new MemoryFileSystem();
+      // @ts-ignore https://github.com/webpack/webpack/pull/9251
+      compiler.outputFileSystem = fs;
       compiler.run((err, stats) => {
         expect(err).toBeNull();
         expect(stats.compilation.errors.length).toBe(0);
@@ -52,7 +57,8 @@ describe("ECMAVersionValidatorPlugin", () => {
         devtool: "nosources-source-map",
         plugins: [new ECMAVersionValidatorPlugin()],
       });
-      compiler.outputFileSystem = new MemoryFileSystem();
+      // @ts-ignore https://github.com/webpack/webpack/pull/9251
+      compiler.outputFileSystem = fs;
       compiler.run((err, stats) => {
         expect(err).toBeNull();
         expect(stats.compilation.errors.length).toBe(1);
