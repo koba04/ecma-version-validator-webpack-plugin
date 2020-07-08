@@ -38,7 +38,7 @@
     "@cybozu/eslint-config": "^10.0.4",
     "@types/jest": "^25.2.3",
     "@types/node": "^13.13.13",
-    "@types/webpack": "^4.41.18",
+    "@types/webpack": "^4.41.21",
     "@types/webpack-sources": "^0.1.8",
     "eslint": "^6.8.0",
     "jest": "^26.0.1",
