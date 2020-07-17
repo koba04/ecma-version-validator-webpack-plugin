@@ -47,7 +47,7 @@
     "rimraf": "^3.0.2",
     "standard-version": "^8.0.2",
     "ts-jest": "^26.0.0",
-    "typescript": "^3.9.6",
+    "typescript": "^3.9.7",
     "webpack": "^4.43.0"
   },
   "dependencies": {
