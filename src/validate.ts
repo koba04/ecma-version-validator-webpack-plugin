@@ -1,5 +1,5 @@
-import { Source } from "webpack-sources";
 import { parse, defaultOptions } from "acorn";
+import { sources } from "webpack";
 import { format } from "./format";
 
 export type ECMAVersion = typeof defaultOptions.ecmaVersion;
@@ -17,7 +17,7 @@ export type ErrorMap = Map<
 >;
 
 export const validate = (
-  assets: { [file: string]: Source },
+  assets: { [file: string]: sources.Source },
   options: { ecmaVersion: ECMAVersion; test: RegExp }
 ) => {
   const { ecmaVersion, test } = options;
