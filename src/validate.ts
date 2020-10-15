@@ -25,7 +25,7 @@ export const validate = (
   Object.entries(assets)
     .filter(([file]) => test.test(file))
     .forEach(([file, source]) => {
-      const sourceCode = source.source();
+      const sourceCode = source.source().toString();
       try {
         parse(sourceCode, { ecmaVersion });
       } catch (e) {
