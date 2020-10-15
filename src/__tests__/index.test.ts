@@ -35,6 +35,7 @@ describe("ECMAVersionValidatorPlugin", () => {
       const compiler = webpack({
         mode: "development",
         entry: path.resolve(__dirname, "fixtures", "es5.js"),
+        target: "es5",
         devtool: "nosources-source-map",
         plugins: [new ECMAVersionValidatorPlugin()],
       });
@@ -53,6 +54,7 @@ describe("ECMAVersionValidatorPlugin", () => {
       const compiler = webpack({
         mode: "development",
         entry: path.resolve(__dirname, "fixtures", "es2015.js"),
+        target: "es5",
         devtool: "nosources-source-map",
         plugins: [new ECMAVersionValidatorPlugin()],
       });
