@@ -1,7 +1,7 @@
-import { Compiler, Plugin } from "webpack";
+import { Compiler } from "webpack";
 import { validate, ECMAVersion } from "./validate";
 
-export class ECMAVersionValidatorPlugin implements Plugin {
+export class ECMAVersionValidatorPlugin /* implements ??? */ {
   name: string;
   ecmaVersion: ECMAVersion;
   test: RegExp;
