@@ -2,10 +2,6 @@ import path from "path";
 import webpack from "webpack";
 import { fs } from "memfs";
 
-// This will be able to remove at webpack v5
-// @ts-ignore https://github.com/webpack/webpack/pull/9251
-fs.join = path.join;
-
 import { ECMAVersionValidatorPlugin } from "../";
 
 describe("ECMAVersionValidatorPlugin", () => {
@@ -46,6 +42,9 @@ describe("ECMAVersionValidatorPlugin", () => {
       compiler.outputFileSystem = fs;
       compiler.run((err, stats) => {
         expect(err).toBeNull();
+        if (typeof stats === "undefined") {
+          throw new Error("An unexpected error: stats is undefined");
+        }
         expect(stats.compilation.errors.length).toBe(0);
         done();
       });
@@ -61,6 +60,9 @@ describe("ECMAVersionValidatorPlugin", () => {
       compiler.outputFileSystem = fs;
       compiler.run((err, stats) => {
         expect(err).toBeNull();
+        if (typeof stats === "undefined") {
+          throw new Error("An unexpected error: stats is undefined");
+        }
         expect(stats.compilation.errors.length).toBe(1);
         done();
       });
