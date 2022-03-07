@@ -1,18 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`format should omit a source code if the error line is over 100 characters 1`] = `
-"[foo.js]:const is a reverved word
-[1:110] aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa = () => {}; // bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+"/home/dummy/foo.js
+  1:110  const is a reverved word
+         aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa = () => {}; // bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 "
 `;
 
 exports[`format should return a formatted message 1`] = `
-"[foo.js]:const is a reverved word
-[2:0] const foo = () => {}
+"/home/dummy/foo.js
+  2:0  const is a reverved word
+       const foo = () => {}
 "
 `;
 
 exports[`format should return a formatted message if position is null 1`] = `
-"[foo.js]:const is a reverved word
+"/home/dummy/foo.js
+  const is a reverved word
 "
 `;
