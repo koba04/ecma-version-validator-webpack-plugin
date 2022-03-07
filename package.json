@@ -43,7 +43,7 @@
     "memfs": "^3.4.1",
     "prettier": "^2.3.2",
     "rimraf": "^3.0.2",
-    "standard-version": "^9.0.0",
+    "standard-version": "^9.3.2",
     "ts-jest": "^26.4.4",
     "typescript": "^4.3.5",
     "webpack": "^5.70.0"
