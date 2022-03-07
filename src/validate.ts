@@ -15,7 +15,6 @@ export type ErrorMap = Map<
     } | null;
   }
 >;
-
 export const validate = (
   assets: { [file: string]: sources.Source },
   options: { ecmaVersion: ECMAVersion; test: RegExp }
@@ -28,7 +27,7 @@ export const validate = (
       const sourceCode = source.source().toString();
       try {
         parse(sourceCode, { ecmaVersion });
-      } catch (e) {
+      } catch (e: any) {
         errors.set(file, {
           message: e.message,
           source: sourceCode,
@@ -37,6 +36,10 @@ export const validate = (
       }
     });
   if (errors.size > 0) {
-    throw new Error(format(errors));
+    throw new Error(
+      `${format(
+        errors
+      )}\nECMAVersionValidatorPlugin has detected incompatible syntax with ES${ecmaVersion}.\n\n`
+    );
   }
 };

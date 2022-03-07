@@ -18,7 +18,7 @@ export class ECMAVersionValidatorPlugin implements WebpackPluginInstance {
           ecmaVersion: this.ecmaVersion,
           test: this.test,
         });
-      } catch (e) {
+      } catch (e: any) {
         compilation.errors.push(e);
       }
     });

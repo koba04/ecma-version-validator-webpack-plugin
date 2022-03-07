@@ -1,11 +1,19 @@
+import path from "path";
 import { ErrorMap } from "./validate";
 
 export const format = (errors: ErrorMap): string => {
   let message = "";
   errors.forEach((v, k) => {
-    message += `[${k}]:${v.message}\n`;
+    message += `${path.resolve(k)}\n`;
+    let sourceIndents = 4;
     if (v.position) {
-      message += `[${v.position.line}:${v.position.column}] ${extractSource(
+      const loc = `  ${v.position.line}:${v.position.column}`;
+      message += loc;
+      sourceIndents = loc.length + 2;
+    }
+    message += `  ${v.message}\n`;
+    if (v.position) {
+      message += `${" ".repeat(sourceIndents)}${extractSource(
         v.source,
         v.position
       )}\n`;

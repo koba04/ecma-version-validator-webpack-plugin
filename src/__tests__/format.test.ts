@@ -1,6 +1,8 @@
 import { format } from "../format";
 import { ErrorMap } from "../validate";
 
+jest.mock("path");
+
 describe("format", () => {
   it("should return a formatted message", () => {
     const errorMap: ErrorMap = new Map();

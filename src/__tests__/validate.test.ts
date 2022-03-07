@@ -3,6 +3,8 @@ import { validate } from "../validate";
 
 const { RawSource, ConcatSource } = sources;
 
+jest.mock("path");
+
 describe("validate", () => {
   describe("success", () => {
     it("should not thrown any error if input sources are valid", () => {
