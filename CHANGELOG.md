@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/koba04/ecma-version-validator-webpack-plugin/compare/v1.2.0...v1.2.1) (2022-03-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency acorn to ^8.7.0 ([#158](https://github.com/koba04/ecma-version-validator-webpack-plugin/issues/158)) ([334cb13](https://github.com/koba04/ecma-version-validator-webpack-plugin/commit/334cb1361de167aa1d30093d5f5a5ab4739a7263))
+
 ## [1.2.0](https://github.com/koba04/ecma-version-validator-webpack-plugin/compare/v1.1.0...v1.2.0) (2022-03-07)
 
 
