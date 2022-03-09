@@ -5,14 +5,14 @@ on: [push]
 
 jobs:
   build:
-    name: Node.js ubuntu-latest 12.x
+    name: Node.js ubuntu-latest 16.x
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js 12.x
-      uses: actions/setup-node@v1
+    - uses: actions/checkout@v2
+    - name: Use Node.js 16.x
+      uses: actions/setup-node@v2
       with:
-        node-version: 12.x
+        node-version: 16.x
     - name: npm ci, and npm run lint
       run: |
         npm ci
