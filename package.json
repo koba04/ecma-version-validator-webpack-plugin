@@ -49,6 +49,6 @@
     "webpack": "^5.70.0"
   },
   "dependencies": {
-    "acorn": "^8.7.0"
+    "acorn": "^8.7.1"
   }
 }
