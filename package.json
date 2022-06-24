@@ -40,7 +40,7 @@
     "@types/node": "^13.13.52",
     "eslint": "^8.10.0",
     "jest": "^27.5.1",
-    "memfs": "^3.4.6",
+    "memfs": "^3.4.7",
     "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
     "standard-version": "^9.0.0",
