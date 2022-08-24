@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@cybozu/eslint-config": "^17.0.3",
-    "@types/jest": "^27.4.1",
+    "@types/jest": "^28.1.8",
     "@types/node": "^13.13.52",
     "eslint": "^8.10.0",
     "jest": "^27.5.1",
